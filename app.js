@@ -1,21 +1,13 @@
 let listaNumerosSorteados = [];
 let limiteSorteioLista = 150;
 let numeroSecreto = gerarNumeroAleatorio();
-let imgPokemon = '<img src="./img/' + numeroSecreto+'.png">';
+let imgPokemon = '<img src="./img/' + numeroSecreto+'.png" class="container__imgpokemon">';
 let tentativas = 0;
 
 //Cria uma função para exibir texto na tela dinamicamente
 function exibirTextoNaTela(tag,texto){
     let campo = document.querySelector(tag);
     campo.innerHTML = texto;
-    // if ('speechSynthesis' in window) {
-    //    let utterance = new SpeechSynthesisUtterance(texto);
-     //   utterance.lang = 'pt-BR'; 
-    //    utterance.rate = 1.2; 
-    //    window.speechSynthesis.speak(utterance); 
-    //} else {
-    //    console.log("Web Speech API não suportada neste navegador.");
-    //}
 }
 
 // Chama as funções pra exibir textos no HTML mas para não ficar repetitivo, vamos criar uma função
@@ -71,7 +63,6 @@ function verificarChute() {
     }
 }
 
-
 // Limpa o campo de input e posiciona o cursor nele
 function limpaCampo(){
     chute = document.querySelector('input');
@@ -85,6 +76,6 @@ function reinicarJogo(){
     tentativas = 0;
     exibirMensagemInicial();
     document.getElementById('reiniciar').setAttribute('disabled', 'true');
-    document.getElementById('pokemon-escondido').innerHTML = "<img src='./img/ponto-de-interrogacao.png'>";
+    document.getElementById('pokemon-escondido').innerHTML = "<img src='./img/ponto-de-interrogacao.png'alt='Pokemons primeira Gen' class='container__imgpokemon'>";
     imgPokemon = '<img src="./img/' + numeroSecreto+'.png">';
 }
